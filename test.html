@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset='utf-8'>
@@ -7,7 +7,6 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <script src='main.js'></script>
     <style>
         * {
@@ -18,20 +17,29 @@
         }
 
         nav {
+            display: flex;
+            justify-content: space-around;
             align-items: center;
-            background-color: #131921;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 100;
             min-height: 8vh;
-            border-bottom: 3px solid #ff9900;
+            background-color: teal;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
 
         }
 
+        .logo {
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 20px;
+            position: absolute;
+            left: 20px;
+        }
+
         .nav-links {
-            line-height: 8vh;
             display: flex;
             justify-content: space-around;
-            width: 100%;
+            width: 60%;
             position: absolute;
             right: 0;
         }
@@ -40,13 +48,12 @@
             text-decoration: none;
             letter-spacing: 1px;
             color: white;
-            font-size: 13px;
+            font-size: 14px;
             padding: 5px;
-            font-weight: 100;
         }
 
         .nav-links a:hover {
-            border-bottom: 3px solid #ff9900;
+            border-bottom: 3px solid white;
             border-radius: 5px;
         }
 
@@ -68,17 +75,13 @@
 
         .sub-nav-links {
             position: absolute;
-            top: 7.5vh;
-            background-color: #131921;
+            top: 4vh;
+            background-color: teal;
             padding: 20px;
             padding-left: 0;
             display: none;
             width: 280px;
             height: auto;
-            border: 3px solid #ff9900;
-            border-top: 0;
-            border-radius: 0 0px 10px 10px;
-            z-index: 100;
 
         }
 
@@ -89,98 +92,82 @@
         .nav-links li:hover .sub-nav-links {
             display: block;
         }
+
+        @media screen and (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            nav {
+                display: block;
+                line-height: 8vh;
+
+            }
+
+            .logo {}
+
+            .nav-links {
+
+                height: 92vh;
+                top: 8vh;
+                background-color: #008080;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 50%;
+                transform: translatey(-100%);
+                transition: all 0.5s ease-in;
+                overflow-x: hidden;
+            }
+
+            .burger {
+                display: block;
+                position: absolute;
+                top: 7px;
+                right: 5px;
+                cursor: pointer;
+
+            }
+
+
+            .nav-active {
+                transform: translateX(0%);
+            }
+
+            .sub-nav-links {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body>
     <nav>
+        <div class="logo">
+            <h4>Vishal Workstation</h4>
+        </div>
         <ul class="nav-links">
-            <li><a href="">Gadgets</a>
+            <li><a href="">Home</a></li>
+            <li><a href="">Projects &#9660</a>
                 <ul class="sub-nav-links">
-                    <li><a href="">Smart Phones</a></li>
-                    <li><a href="">Laptops</a></li>
-                    <li><a href="">Computers</a></li>
-                    <li><a href="">Tablets</a></li>
-                    <li><a href="">Smart Home</a></li>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Work</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Projects</a></li>
+                    <li><a href="">Contact</a></li>
                 </ul>
             </li>
-            <li><a href="">TV & Appliances</a>
+            <li><a href="">Designs &#9660</a>
                 <ul class="sub-nav-links">
-                    <li><a href="">LED</a></li>
-                    <li><a href="">LCD</a></li>
-                    <li><a href="">Smart TV</a></li>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Work</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Projects</a></li>
+                    <li><a href="">Contact</a></li>
                 </ul>
             </li>
-            <li><a href="">Health & Beauti</a></li>
-            <li><a href="">Groceries</a>
-                <ul class="sub-nav-links">
-                    <li><a href="">Brekfast</a></li>
-                    <li><a href="">Snacks</a></li>
-                    <li><a href="">Pet supplies</a></li>
-                    <li><a href="">Cleanliness</a></li>
-                    <li><a href="">Sanitation</a></li>
-                </ul>
-            </li>
-            <li><a href="">Lifestyle</a>
-                <ul class="sub-nav-links">
-                    <li><a href="">Bath</a></li>
-                    <li><a href="">Laundry</a></li>
-                    <li><a href="">Lighting</a></li>
-                    <li><a href="">Decoration</a></li>
-                    <li><a href="">Furniture</a></li>
-                </ul>
-            </li>
-            <li><a href="">Men's-Fashion</a>
-                <ul class="sub-nav-links">
-                    <li><a href="">Shoes</a></li>
-                    <li><a href="">Clothing</a></li>
-                    <li><a href="">Watch</a></li>
-                    <li><a href="">Cap</a></li>
-                    <li><a href="">Underwear</a></li>
-                </ul>
-            </li>
-            <li><a href="">Women's-Fashion</a>
-                <ul class="sub-nav-links">
-                    <li><a href="">Shoes</a></li>
-                    <li><a href="">Clothing</a></li>
-                    <li><a href="">Watch</a></li>
-                    <li><a href="">Cap</a></li>
-                    <li><a href="">Underwear</a></li>
-                </ul>
-            </li>
-            <li><a href="">Sports-Outdoor</a>
-                <ul class="sub-nav-links">
-                    <li><a href="">Shoes</a></li>
-                    <li><a href="">Clothing</a></li>
-                    <li><a href="">Watch</a></li>
-                    <li><a href="">Cap</a></li>
-                    <li><a href="">Underwear</a></li>
-                </ul>
-            </li>
-            <li><a href="">Sanitation</a>
-                <ul class="sub-nav-links">
-                    <li><a href="">Hand Sanitizer</a></li>
-                    <li><a href="">Soap</a></li>
-                    <li><a href="">Detergent</a></li>
-                </ul>
-            </li>
-            <li><a href="">Watches</a>
-                <ul class="sub-nav-links">
-                    <li><a href="">Casual</a></li>
-                    <li><a href="">Formal</a></li>
-                    <li><a href="">Ladies</a></li>
-                    <li><a href="">Gents</a></li>
-                </ul>
-            </li>
-            <li><a href="">Bevrages</a>
-                <ul class="sub-nav-links">
-                    <li><a href="">Beer</a></li>
-                    <li><a href="">Whisky</a></li>
-                    <li><a href="">Rum</a></li>
-                    <li><a href="">Wine</a></li>
-                </ul>
-            </li>
-            <li><a href="">Other</a></li>
+            <li><a href="">Git Hub</a></li>
+            <li><a href="">Contact</a></li>
         </ul>
         <div class="burger">
             <div class="line1 line"></div>
@@ -188,7 +175,7 @@
             <div class="line3 line"></div>
         </div>
     </nav>
-
+    <!--JAVASCRIPT-->
     <script>
         const navSlide = () => {
             const burger = document.querySelector('.burger');
@@ -198,11 +185,6 @@
                 nav.classList.toggle('nav-active');
             });
 
-            const link = document.querySelectorAll('.nav-links li a');
-            link.forEach((a) => {
-                a.style.opacity = '1';
-                a.style.transform = 'translatex(0)'
-            });
         }
         navSlide();
     </script>
